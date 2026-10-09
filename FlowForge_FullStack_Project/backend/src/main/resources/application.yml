@@ -1,0 +1,18 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/flowforge}
+    username: ${DATABASE_USERNAME:flowforge}
+    password: ${DATABASE_PASSWORD:flowforge_dev}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  jackson:
+    default-property-inclusion: non_null
+app:
+  frontend-origin: ${FRONTEND_ORIGIN:http://localhost:5173}
